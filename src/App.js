@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 
 function App() {
+  let [Lit, SetLit] = useState(true);
+  let [Temp, SetTemp] = useState(22);
+  let See = Lit? "lit" : "dark";
+  let AWE = Lit? "ON" : "OFF";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className = {`room ${See}`}>
+          <h1><strong>This is the 4th react assignment</strong></h1>
+      <br/><br/>
+         <h1>Light is {AWE}</h1>
+    <div className = "btn1">
+        <button onClick = {()=> {
+          SetLit(true);
+        }}>ON</button>
+        <button onClick = {()=> {
+          SetLit(false);
+        }}>OFF</button>
+        </div>
+        <br/>
+         <h1>The temprature is : {Temp}</h1>
+    <div className = "btn2">
+        <button onClick = {()=> {
+          SetTemp(++Temp);
+        }}>+</button>
+        <button onClick = {()=> {
+          SetTemp(--Temp);
+        }}>-</button>
+    </div>
     </div>
   );
 }

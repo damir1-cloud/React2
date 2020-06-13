@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.dark{
+  background-color: black;
+  color: white;
+}
+
+.room {
+  height: 100%;
+  text-align: center;
+}
+button {
+  font-size: 30px;
+  width: 70px;
+}
